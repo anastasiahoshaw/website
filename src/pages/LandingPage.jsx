@@ -41,7 +41,7 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
         <div className="container hero-layout">
           <div>
             <p className="hero-single-paragraph">
-              Official website of Anastasia Hoshaw. As a concert organist and sacred musician, Anastasia presents solo recitals, directs liturgical music, and offers private organ and piano instruction. Here you can find upcoming recital dates, explore private studio lessons, view her selected repertoire, and submit booking inquiries.
+              The official website of Anastasia Hoshaw! As a concert organist and sacred musician, Anastasia presents solo recitals, directs liturgical music, and offers private organ and piano instruction. Here you can find upcoming recital dates, explore private studio lessons, view her selected repertoire, and submit booking inquiries.
             </p>
           </div>
 

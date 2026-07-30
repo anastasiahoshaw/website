@@ -271,14 +271,12 @@ a:hover {
   color: var(--text-primary);
   font-weight: 400;
   letter-spacing: 0.012em;
-  border-left: 3px solid var(--accent-gold);
-  padding-left: 1.8rem;
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
-  gap: 3.5rem;
+  grid-template-columns: 1.85fr 0.65fr;
+  gap: 3rem;
   align-items: center;
 }
 
