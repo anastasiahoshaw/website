@@ -40,14 +40,8 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
       <section className="editorial-hero">
         <div className="container hero-layout">
           <div>
-            <blockquote className="hero-lead-quote">
-              Concert organist and sacred musician presenting solo recitals, sacred service leadership, and private organ & piano instruction.
-            </blockquote>
-            
-            <div className="thin-rule" style={{ margin: '1.6rem 0 1.8rem 0' }}></div>
-
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.85', color: 'var(--text-secondary)' }}>
-              Official website of Anastasia Hoshaw. Find upcoming recital dates, explore private studio lessons, view selected repertoire, or submit booking inquiries.
+            <p className="hero-single-paragraph">
+              Official website of Anastasia Hoshaw. As a concert organist and sacred musician, Anastasia presents solo recitals, directs liturgical music, and offers private organ and piano instruction. Here you can find upcoming recital dates, explore private studio lessons, view her selected repertoire, and submit booking inquiries.
             </p>
           </div>
 
