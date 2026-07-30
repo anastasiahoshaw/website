@@ -25,7 +25,7 @@ export default function BioResumePage({ setActiveTab, onOpenLightbox }) {
           {/* Bio Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '3rem', alignItems: 'start', margin: '3rem 0' }}>
             <div className="analog-frame">
-              <img src="photos/DSC_7540.jpeg" alt="Anastasia Hoshaw" style={{ height: '420px' }} />
+              <img src="./photos/DSC_7540.jpeg" alt="Anastasia Hoshaw" style={{ height: '420px' }} />
               <div className="analog-caption">Anastasia Hoshaw</div>
             </div>
 

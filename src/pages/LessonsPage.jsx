@@ -28,7 +28,7 @@ export default function LessonsPage({ setActiveTab, onOpenFormModal }) {
             </div>
 
             <div className="analog-frame">
-              <img src="photos/DSC_7521.jpeg" alt="Anastasia Hoshaw at the Organ Console" style={{ height: '360px' }} />
+              <img src="./photos/DSC_7521.jpeg" alt="Anastasia Hoshaw at the Organ Console" style={{ height: '360px' }} />
             </div>
           </div>
 

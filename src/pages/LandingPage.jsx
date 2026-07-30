@@ -3,32 +3,32 @@ import React from 'react';
 export default function LandingPage({ setActiveTab, onOpenLightbox }) {
   const photoGallery = [
     {
-      src: "photos/DSC_7483.jpeg",
+      src: "./photos/DSC_7483.jpeg",
       caption: "Anastasia Hoshaw at the Organ Pipe Chamber",
       location: "Sanctuary Organ"
     },
     {
-      src: "photos/DSC_7503.jpeg",
+      src: "./photos/DSC_7503.jpeg",
       caption: "Organ Console Performance",
       location: "Concert Recital"
     },
     {
-      src: "photos/DSC_7521.jpeg",
+      src: "./photos/DSC_7521.jpeg",
       caption: "Anastasia Hoshaw at the Manuals",
       location: "Organ Studio"
     },
     {
-      src: "photos/DSC_7528.jpeg",
+      src: "./photos/DSC_7528.jpeg",
       caption: "Recital Rehearsal",
       location: "Organ Console"
     },
     {
-      src: "photos/DSC_7554.jpeg",
+      src: "./photos/DSC_7554.jpeg",
       caption: "Pedalboard Registration",
       location: "Organ Console"
     },
     {
-      src: "photos/IMG_2779.jpeg",
+      src: "./photos/IMG_2779.jpeg",
       caption: "Cathedral Organ Façade & Console",
       location: "Cathedral Sanctuary"
     }
@@ -62,7 +62,7 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
 
           <div>
             <div className="analog-frame" onClick={() => onOpenLightbox(photoGallery, 0)} style={{ cursor: 'pointer' }}>
-              <img src="photos/DSC_7483.jpeg" alt="Anastasia Hoshaw Organist" />
+              <img src="./photos/DSC_7483.jpeg" alt="Anastasia Hoshaw Organist" />
               <div className="analog-caption">Anastasia Hoshaw</div>
             </div>
           </div>
