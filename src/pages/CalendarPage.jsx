@@ -31,7 +31,6 @@ export default function CalendarPage({ setActiveTab, onOpenFormModal }) {
       <section className="section-padding">
         <div className="container" style={{ maxWidth: '840px' }}>
           <div className="editorial-header">
-            <span className="editorial-subtitle">PERFORMANCES</span>
             <h1>Recital Calendar</h1>
             <p style={{ marginTop: '0.5rem' }}>Upcoming organ recitals, sacred services, and guest engagements.</p>
             <div className="thin-rule"></div>

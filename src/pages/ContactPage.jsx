@@ -54,7 +54,6 @@ export default function ContactPage() {
       <section className="section-padding">
         <div className="container" style={{ maxWidth: '840px' }}>
           <div className="editorial-header">
-            <span className="editorial-subtitle">GET IN TOUCH</span>
             <h1>Contact & Inquiries</h1>
             <p style={{ marginTop: '0.5rem' }}>Send a message regarding recital bookings, lesson inquiries, or general questions.</p>
             <div className="thin-rule"></div>

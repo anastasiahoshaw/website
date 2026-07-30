@@ -40,9 +40,6 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
       <section className="editorial-hero">
         <div className="container hero-layout">
           <div>
-            <span className="editorial-subtitle">CONCERT ORGANIST • SACRED MUSICIAN • PEDAGOGUE</span>
-            <h1 style={{ margin: '0.9rem 0 1.3rem 0', fontWeight: 400 }}>Anastasia Hoshaw</h1>
-            
             <p style={{ marginBottom: '2rem', fontSize: '1.14rem', lineHeight: '1.85' }}>
               Official website of Anastasia Hoshaw, concert organist and sacred musician. Discover upcoming recital engagements, explore private organ and piano instruction, view selected repertoire, or submit booking inquiries.
             </p>
@@ -72,7 +69,6 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
       {/* Brief Overview Section */}
       <section className="section-padding" style={{ background: 'var(--bg-surface)' }}>
         <div className="container" style={{ maxWidth: '820px', textAlign: 'center' }}>
-          <span className="editorial-subtitle">ABOUT THE ARTIST</span>
           <h2 style={{ margin: '0.6rem 0 1.2rem 0' }}>Organ & Sacred Music Performance</h2>
           <div className="thin-rule" style={{ marginBottom: '2.4rem' }}></div>
 
@@ -94,7 +90,6 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
       <section className="section-padding">
         <div className="container">
           <div className="editorial-header">
-            <span className="editorial-subtitle">PHOTOGRAPHS</span>
             <h2>Console & Performance Gallery</h2>
             <div className="thin-rule"></div>
           </div>

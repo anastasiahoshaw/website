@@ -17,7 +17,6 @@ export default function BioResumePage({ setActiveTab, onOpenLightbox }) {
       <section className="section-padding">
         <div className="container" style={{ maxWidth: '840px' }}>
           <div className="editorial-header">
-            <span className="editorial-subtitle">BACKGROUND</span>
             <h1>Biography & Repertoire</h1>
             <div className="thin-rule"></div>
           </div>

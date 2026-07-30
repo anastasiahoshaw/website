@@ -6,7 +6,6 @@ export default function LessonsPage({ setActiveTab, onOpenFormModal }) {
       <section className="section-padding">
         <div className="container" style={{ maxWidth: '840px' }}>
           <div className="editorial-header">
-            <span className="editorial-subtitle">INSTRUCTION & PEDAGOGY</span>
             <h1>Organ & Piano Lessons</h1>
             <p style={{ marginTop: '0.5rem' }}>Private instruction for students of varying backgrounds and experience levels.</p>
             <div className="thin-rule"></div>
