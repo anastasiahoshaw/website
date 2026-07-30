@@ -46,7 +46,7 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
           </div>
 
           <div>
-            <div className="analog-frame" onClick={() => onOpenLightbox(photoGallery, 0)} style={{ cursor: 'pointer' }}>
+            <div className="hero-analog-frame" onClick={() => onOpenLightbox(photoGallery, 0)} style={{ cursor: 'pointer' }}>
               <img src="./photos/DSC_7483.jpeg" alt="Anastasia Hoshaw Organist" />
               <div className="analog-caption">Anastasia Hoshaw</div>
             </div>
