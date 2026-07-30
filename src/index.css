@@ -132,12 +132,13 @@ a:hover {
 
 .brand-title {
   font-family: var(--font-heading);
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
+  margin-left: -3.3rem;
   transition: opacity var(--transition-fast);
 }
 
@@ -259,24 +260,29 @@ a:hover {
 
 /* Editorial Hero Section */
 .editorial-hero {
-  padding: 5.5rem 0 4.5rem 0;
+  padding: 2.2rem 0 1.8rem 0;
   border-bottom: 1px solid var(--border-subtle);
   background: radial-gradient(circle at 85% 25%, rgba(138, 101, 32, 0.06) 0%, transparent 60%);
 }
 
 .hero-single-paragraph {
   font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-  line-height: 1.75;
+  font-size: clamp(1.48rem, 2.5vw, 1.88rem);
+  line-height: 1.68;
   color: var(--text-primary);
-  font-weight: 400;
-  letter-spacing: 0.012em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: left;
+  text-wrap: pretty;
+  margin-left: -7.5rem;
+  padding-left: 0;
+  text-indent: 3.8rem;
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1.85fr 0.65fr;
-  gap: 3rem;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 1.8rem;
   align-items: center;
 }
 
@@ -289,7 +295,8 @@ a:hover {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   display: block;
-  max-width: 340px;
+  width: 100%;
+  max-width: 480px;
   margin: 0 auto;
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
@@ -301,8 +308,8 @@ a:hover {
 
 .hero-analog-frame img {
   width: 100%;
-  height: 370px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
   border-radius: var(--radius-sm);
   filter: contrast(0.98) saturate(0.98);
