@@ -41,21 +41,21 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
         <div className="container hero-layout">
           <div>
             <span className="editorial-subtitle">ORGANIST • SACRED MUSICIAN • EDUCATOR</span>
-            <h1 style={{ margin: '0.8rem 0 1.2rem 0' }}>Anastasia Hoshaw</h1>
+            <h1 style={{ margin: '0.8rem 0 1.2rem 0', fontWeight: 400 }}>Anastasia Hoshaw</h1>
             
-            <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', lineHeight: '1.7' }}>
-              Welcome to the official website of Anastasia Hoshaw, organist and sacred musician. This site features upcoming recital dates, information regarding private organ and piano instruction, repertoire, and booking inquiries.
+            <p style={{ marginBottom: '1.8rem', fontSize: '1.12rem', lineHeight: '1.8' }}>
+              Welcome to the official website of Anastasia Hoshaw, concert organist and sacred musician. Discover upcoming recital engagements, explore private organ and piano instruction, view repertoire history, or request concert booking details.
             </p>
 
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <div style={{ display: 'flex', gap: '1.1rem', flexWrap: 'wrap', marginTop: '2.2rem' }}>
               <button className="btn-analog-primary" onClick={() => setActiveTab('calendar')}>
-                View Recital Calendar
+                View Recital Calendar &rarr;
               </button>
               <button className="btn-analog-outline" onClick={() => setActiveTab('lessons')}>
-                Lesson Information
+                Lesson Studio
               </button>
               <button className="btn-analog-outline" onClick={() => setActiveTab('contact')}>
-                Contact / Inquiries
+                Contact & Booking
               </button>
             </div>
           </div>
