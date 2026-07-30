@@ -40,21 +40,15 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
       <section className="editorial-hero">
         <div className="container hero-layout">
           <div>
-            <p style={{ marginBottom: '2rem', fontSize: '1.14rem', lineHeight: '1.85' }}>
-              Official website of Anastasia Hoshaw, concert organist and sacred musician. Discover upcoming recital engagements, explore private organ and piano instruction, view selected repertoire, or submit booking inquiries.
-            </p>
+            <blockquote className="hero-lead-quote">
+              “Concert organist and sacred musician presenting solo recitals, sacred service leadership, and private organ & piano instruction.”
+            </blockquote>
+            
+            <div className="thin-rule" style={{ margin: '1.6rem 0 1.8rem 0' }}></div>
 
-            <div style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap', marginTop: '2.4rem' }}>
-              <button className="btn-analog-primary" onClick={() => setActiveTab('calendar')}>
-                Recital Calendar <span className="btn-arrow">&rarr;</span>
-              </button>
-              <button className="btn-analog-outline" onClick={() => setActiveTab('lessons')}>
-                Lesson Studio
-              </button>
-              <button className="btn-analog-outline" onClick={() => setActiveTab('contact')}>
-                Booking & Inquiries
-              </button>
-            </div>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.85', color: 'var(--text-secondary)' }}>
+              Official website of Anastasia Hoshaw. Discover upcoming recital engagements, explore private studio lessons, view selected repertoire, or submit booking inquiries.
+            </p>
           </div>
 
           <div>
