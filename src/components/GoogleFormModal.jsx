@@ -83,7 +83,7 @@ export default function GoogleFormModal({ isOpen, onClose, defaultType = 'genera
             <MessageSquare style={{ color: 'var(--accent-gold)' }} size={22} />
             <div>
               <h3 style={{ fontSize: '1.25rem', color: 'var(--text-primary)', margin: 0 }}>Direct Inquiry & Booking Form</h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Send a direct message or embed your custom Google Form</p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Send a direct message to Anastasia Hoshaw</p>
             </div>
           </div>
           <button className="lightbox-close-btn" style={{ position: 'static' }} onClick={onClose}>
@@ -215,7 +215,7 @@ export default function GoogleFormModal({ isOpen, onClose, defaultType = 'genera
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem' }}>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                Protected by Google Form integration standard
+                Delivered via encrypted HTTPS API
               </span>
               <button type="submit" className="cta-btn-gold" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.7 : 1 }}>
                 <Send size={16} /> {isSubmitting ? 'Sending...' : 'Send Inquiry'}

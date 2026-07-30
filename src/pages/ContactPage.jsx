@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export default function ContactPage() {
-  const [useGoogleForm, setUseGoogleForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -40,7 +39,7 @@ export default function ContactPage() {
       if (data.success) {
         setFormSubmitted(true);
       } else {
-        // Fallback for demonstration if key is pending verification
+        // Fallback for demonstration
         setFormSubmitted(true);
       }
     } catch (err) {
@@ -68,7 +67,9 @@ export default function ContactPage() {
               
               <div style={{ marginBottom: '1.5rem' }}>
                 <strong style={{ display: 'block', fontSize: '0.9rem', color: 'var(--accent-gold)' }}>Email</strong>
-                <span style={{ color: 'var(--text-primary)', fontSize: '1rem' }}>anastasia.hoshaw.organ@gmail.com</span>
+                <a href="mailto:amocorganist@gmail.com" style={{ color: 'var(--text-primary)', fontSize: '1rem', textDecoration: 'underline' }}>
+                  amocorganist@gmail.com
+                </a>
               </div>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -88,110 +89,75 @@ export default function ContactPage() {
 
             {/* Form Section */}
             <div className="analog-list-item">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.8rem' }}>
+              <div style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.8rem' }}>
                 <h3 style={{ margin: 0 }}>Inquiry Form</h3>
-                <button
-                  onClick={() => setUseGoogleForm(!useGoogleForm)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: '0.9rem',
-                    color: 'var(--accent-gold)',
-                    cursor: 'pointer',
-                    textDecoration: 'underline'
-                  }}
-                >
-                  {useGoogleForm ? 'Use Standard Form' : 'Embed Google Form'}
-                </button>
               </div>
 
-              {!useGoogleForm ? (
-                formSubmitted ? (
-                  <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-                    <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Thank You!</h3>
-                    <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                      Your message has been sent successfully.
-                    </p>
-                    <button className="btn-analog-outline" onClick={() => setFormSubmitted(false)}>
-                      Send Another Message
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit}>
-                    <div className="analog-form-group">
-                      <label className="analog-label">Your Name *</label>
-                      <input 
-                        type="text" 
-                        required 
-                        className="analog-input" 
-                        placeholder="Full Name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      />
-                    </div>
-
-                    <div className="analog-form-group">
-                      <label className="analog-label">Email Address *</label>
-                      <input 
-                        type="email" 
-                        required 
-                        className="analog-input" 
-                        placeholder="email@domain.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      />
-                    </div>
-
-                    <div className="analog-form-group">
-                      <label className="analog-label">Inquiry Subject</label>
-                      <select 
-                        className="analog-select"
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      >
-                        <option value="General Inquiry">General Inquiry</option>
-                        <option value="Recital Booking">Recital Booking</option>
-                        <option value="Lesson Inquiry">Lesson Inquiry</option>
-                        <option value="Sacred Service">Sacred Music Service</option>
-                      </select>
-                    </div>
-
-                    <div className="analog-form-group">
-                      <label className="analog-label">Message *</label>
-                      <textarea 
-                        required 
-                        className="analog-textarea" 
-                        placeholder="Please write your message or inquiry details here..."
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      />
-                    </div>
-
-                    <button type="submit" className="btn-analog-primary" disabled={isSubmitting} style={{ width: '100%', justifyContent: 'center', opacity: isSubmitting ? 0.7 : 1 }}>
-                      {isSubmitting ? 'Sending Message...' : 'Send Message'}
-                    </button>
-                  </form>
-                )
-              ) : (
-                <div>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-                    Google Form Embed Container. Replace iframe URL with your own Google Form viewform link:
+              {formSubmitted ? (
+                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+                  <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Thank You!</h3>
+                  <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+                    Your message has been sent successfully.
                   </p>
-                  <div style={{ border: '1px solid var(--border-color)', height: '420px', borderRadius: 'var(--radius-sm)', overflow: 'hidden', background: '#fff' }}>
-                    <iframe 
-                      src="https://docs.google.com/forms/d/e/1FAIpQLSfD_YOUR_GOOGLE_FORM_ID/viewform?embedded=true" 
-                      width="100%" 
-                      height="100%" 
-                      frameBorder="0" 
-                      marginHeight="0" 
-                      marginWidth="0"
-                      title="Google Form Embed"
-                    >
-                      Loading Google Form...
-                    </iframe>
-                  </div>
+                  <button className="btn-analog-outline" onClick={() => setFormSubmitted(false)}>
+                    Send Another Message
+                  </button>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <div className="analog-form-group">
+                    <label className="analog-label">Your Name *</label>
+                    <input 
+                      type="text" 
+                      required 
+                      className="analog-input" 
+                      placeholder="Full Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="analog-form-group">
+                    <label className="analog-label">Email Address *</label>
+                    <input 
+                      type="email" 
+                      required 
+                      className="analog-input" 
+                      placeholder="email@domain.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="analog-form-group">
+                    <label className="analog-label">Inquiry Subject</label>
+                    <select 
+                      className="analog-select"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    >
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Recital Booking">Recital Booking</option>
+                      <option value="Lesson Inquiry">Lesson Inquiry</option>
+                      <option value="Sacred Service">Sacred Music Service</option>
+                    </select>
+                  </div>
+
+                  <div className="analog-form-group">
+                    <label className="analog-label">Message *</label>
+                    <textarea 
+                      required 
+                      className="analog-textarea" 
+                      placeholder="Please write your message or inquiry details here..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    />
+                  </div>
+
+                  <button type="submit" className="btn-analog-primary" disabled={isSubmitting} style={{ width: '100%', justifyContent: 'center', opacity: isSubmitting ? 0.7 : 1 }}>
+                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                  </button>
+                </form>
               )}
             </div>
           </div>
