@@ -14,11 +14,48 @@ export default function GoogleFormModal({ isOpen, onClose, defaultType = 'genera
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'N/A',
+          event_date: formData.eventDate || 'N/A',
+          venue: formData.venue || 'N/A',
+          lesson_interest: formData.lessonType || 'N/A',
+          subject: `[Website Inquiry - ${formType.toUpperCase()}] ${formData.name}`,
+          message: formData.message,
+          from_name: 'Anastasia Hoshaw Website'
+        })
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitted(true);
+      }
+    } catch (err) {
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -180,8 +217,8 @@ export default function GoogleFormModal({ isOpen, onClose, defaultType = 'genera
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                 Protected by Google Form integration standard
               </span>
-              <button type="submit" className="cta-btn-gold">
-                <Send size={16} /> Send Inquiry
+              <button type="submit" className="cta-btn-gold" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.7 : 1 }}>
+                <Send size={16} /> {isSubmitting ? 'Sending...' : 'Send Inquiry'}
               </button>
             </div>
           </form>
