@@ -22,7 +22,7 @@ export default function LessonsPage({ setActiveTab, onOpenFormModal }) {
               <p style={{ marginBottom: '1.5rem' }}>
                 Whether learning the organ for the first time, refining organ pedal technique and registration, or studying piano literature, instruction focuses on musical clarity, score reading, and posture.
               </p>
-              <button className="btn-analog-primary" onClick={() => onOpenFormModal('lesson')}>
+              <button className="btn-analog-primary" onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 Request Lesson Information
               </button>
             </div>
@@ -65,7 +65,7 @@ export default function LessonsPage({ setActiveTab, onOpenFormModal }) {
             <p style={{ maxWidth: '600px', margin: '0 auto 1.5rem auto' }}>
               Lessons are available in-person on pipe organ and piano, as well as remotely for organists and pianists seeking online instruction.
             </p>
-            <button className="btn-analog-primary" onClick={() => onOpenFormModal('lesson')}>
+            <button className="btn-analog-primary" onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
               Inquire About Studio Availability
             </button>
           </div>
