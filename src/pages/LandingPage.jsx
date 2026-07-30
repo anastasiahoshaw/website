@@ -40,22 +40,22 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
       <section className="editorial-hero">
         <div className="container hero-layout">
           <div>
-            <span className="editorial-subtitle">ORGANIST • SACRED MUSICIAN • EDUCATOR</span>
-            <h1 style={{ margin: '0.8rem 0 1.2rem 0', fontWeight: 400 }}>Anastasia Hoshaw</h1>
+            <span className="editorial-subtitle">CONCERT ORGANIST • SACRED MUSICIAN • PEDAGOGUE</span>
+            <h1 style={{ margin: '0.9rem 0 1.3rem 0', fontWeight: 400 }}>Anastasia Hoshaw</h1>
             
-            <p style={{ marginBottom: '1.8rem', fontSize: '1.12rem', lineHeight: '1.8' }}>
-              Welcome to the official website of Anastasia Hoshaw, concert organist and sacred musician. Discover upcoming recital engagements, explore private organ and piano instruction, view repertoire history, or request concert booking details.
+            <p style={{ marginBottom: '2rem', fontSize: '1.14rem', lineHeight: '1.85' }}>
+              Official website of Anastasia Hoshaw, concert organist and sacred musician. Discover upcoming recital engagements, explore private organ and piano instruction, view selected repertoire, or submit booking inquiries.
             </p>
 
-            <div style={{ display: 'flex', gap: '1.1rem', flexWrap: 'wrap', marginTop: '2.2rem' }}>
+            <div style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap', marginTop: '2.4rem' }}>
               <button className="btn-analog-primary" onClick={() => setActiveTab('calendar')}>
-                View Recital Calendar &rarr;
+                Recital Calendar <span className="btn-arrow">&rarr;</span>
               </button>
               <button className="btn-analog-outline" onClick={() => setActiveTab('lessons')}>
                 Lesson Studio
               </button>
               <button className="btn-analog-outline" onClick={() => setActiveTab('contact')}>
-                Contact & Booking
+                Booking & Inquiries
               </button>
             </div>
           </div>
@@ -71,21 +71,21 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
 
       {/* Brief Overview Section */}
       <section className="section-padding" style={{ background: 'var(--bg-surface)' }}>
-        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '820px', textAlign: 'center' }}>
           <span className="editorial-subtitle">ABOUT THE ARTIST</span>
-          <h2 style={{ margin: '0.5rem 0 1rem 0' }}>Organ & Sacred Music Performance</h2>
-          <div className="thin-rule" style={{ marginBottom: '2rem' }}></div>
+          <h2 style={{ margin: '0.6rem 0 1.2rem 0' }}>Organ & Sacred Music Performance</h2>
+          <div className="thin-rule" style={{ marginBottom: '2.4rem' }}></div>
 
-          <p style={{ marginBottom: '1.5rem', fontSize: '1.05rem', textAlign: 'left' }}>
-            Anastasia Hoshaw is active as a recitalist, sacred musician, and keyboard teacher. Her programming explores classical organ repertoire spanning Baroque, Romantic, and contemporary literature, alongside sacred service playing and choral accompaniment.
+          <p style={{ marginBottom: '1.6rem', fontSize: '1.08rem', textAlign: 'left', lineHeight: '1.85' }}>
+            Anastasia Hoshaw is active as a recitalist, sacred musician, and keyboard educator. Her programming explores classical organ literature spanning Baroque counterpoint, French Romantic symphonic works, and modern masterworks, alongside sacred service leadership and choral accompaniment.
           </p>
 
-          <p style={{ marginBottom: '2rem', fontSize: '1.05rem', textAlign: 'left' }}>
-            Whether presenting solo recitals, leading sacred services, or teaching students at the organ console, her work emphasizes musical expression, clarity, and liturgical tradition.
+          <p style={{ marginBottom: '2.5rem', fontSize: '1.08rem', textAlign: 'left', lineHeight: '1.85' }}>
+            Whether presenting solo recitals, leading sacred services, or teaching students at the console, her artistic vision combines technical precision, expressive depth, and liturgical tradition.
           </p>
 
           <button className="btn-analog-outline" onClick={() => setActiveTab('bio')}>
-            Read Bio & Repertoire List
+            Biography & Full Repertoire <span className="btn-arrow">&rarr;</span>
           </button>
         </div>
       </section>
@@ -103,9 +103,9 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
             {photoGallery.map((item, idx) => (
               <div key={idx} className="analog-gallery-card" onClick={() => onOpenLightbox(photoGallery, idx)}>
                 <img src={item.src} alt={item.caption} />
-                <div style={{ padding: '0.6rem 0.2rem 0.2rem 0.2rem', textAlign: 'center' }}>
-                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.05rem', color: 'var(--text-primary)' }}>{item.caption}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{item.location}</div>
+                <div style={{ padding: '0.75rem 0.3rem 0.3rem 0.3rem', textAlign: 'center' }}>
+                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', color: 'var(--text-primary)', fontWeight: 500 }}>{item.caption}</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>{item.location}</div>
                 </div>
               </div>
             ))}
@@ -115,14 +115,14 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
 
       {/* Simple CTA */}
       <section className="section-padding" style={{ background: 'var(--bg-surface-elevated)', borderTop: '1px solid var(--border-color)' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '640px' }}>
-          <h2 style={{ marginBottom: '0.8rem' }}>Recitals & Lesson Studio</h2>
-          <p style={{ marginBottom: '1.8rem' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '660px' }}>
+          <h2 style={{ marginBottom: '0.9rem' }}>Recitals & Lesson Studio</h2>
+          <p style={{ marginBottom: '2rem', fontSize: '1.08rem' }}>
             Available for solo organ recitals, sacred service playing, and private organ & piano instruction.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button className="btn-analog-primary" onClick={() => setActiveTab('contact')}>
-              Send Inquiry
+              Send Inquiry <span className="btn-arrow">&rarr;</span>
             </button>
             <button className="btn-analog-outline" onClick={() => setActiveTab('lessons')}>
               Lesson Details

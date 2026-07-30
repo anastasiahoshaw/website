@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header({ activeTab, setActiveTab, theme, toggleTheme }) {
+export default function Header({ activeTab, setActiveTab }) {
   const navItems = [
     { id: 'landing', label: 'Home' },
     { id: 'calendar', label: 'Calendar' },
@@ -35,23 +35,6 @@ export default function Header({ activeTab, setActiveTab, theme, toggleTheme }) 
             ))}
           </ul>
         </nav>
-
-        <div>
-          <button 
-            onClick={toggleTheme}
-            style={{
-              background: 'none',
-              border: 'none',
-              fontFamily: 'var(--font-heading)',
-              fontSize: '0.95rem',
-              color: 'var(--text-muted)',
-              cursor: 'pointer',
-              textDecoration: 'underline'
-            }}
-          >
-            {theme === 'dark' ? 'Light Theme' : 'Dark Theme'}
-          </button>
-        </div>
       </div>
     </header>
   );

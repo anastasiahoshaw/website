@@ -57,8 +57,6 @@ export default function App() {
       <Header 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
-        theme={theme} 
-        toggleTheme={toggleTheme} 
       />
 
       <main style={{ minHeight: '75vh' }}>
