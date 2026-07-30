@@ -18,7 +18,7 @@ export default function Header({ activeTab, setActiveTab, theme, toggleTheme }) 
     <header className="header">
       <div className="container header-nav">
         <div className="brand-title" onClick={() => handleNavClick('landing')}>
-          <span className="brand-logo-icon">A</span> Anastasia Hoshaw
+          Anastasia Hoshaw
         </div>
 
         <nav>
