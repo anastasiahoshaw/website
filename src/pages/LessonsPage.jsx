@@ -11,7 +11,7 @@ export default function LessonsPage({ setActiveTab, onOpenFormModal }) {
           </div>
 
           {/* Teaching Philosophy & Image */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '3rem', alignItems: 'center', margin: '3rem 0' }}>
+          <div className="lessons-intro-grid" style={{ margin: '3rem 0' }}>
             <div>
               <h2 style={{ fontSize: '1.8rem', marginBottom: '1.2rem' }}>Teaching Philosophy</h2>
               <p style={{ fontSize: '1.08rem', lineHeight: '1.85', color: 'var(--text-secondary)' }}>
@@ -32,7 +32,7 @@ export default function LessonsPage({ setActiveTab, onOpenFormModal }) {
           <div style={{ margin: '4rem 0' }}>
             <h2 style={{ fontSize: '1.8rem', textAlign: 'center', marginBottom: '2rem' }}>Areas of Instruction</h2>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+            <div className="instruction-grid">
               {/* Column 1: Beginning Organ */}
               <div className="analog-list-item" style={{ padding: '2rem' }}>
                 <h3 style={{ fontSize: '1.4rem', color: 'var(--accent-gold)', marginBottom: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.5rem' }}>

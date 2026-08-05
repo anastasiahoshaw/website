@@ -209,7 +209,7 @@ export default function RecordingsPage() {
             </p>
             <div className="thin-rule" style={{ marginBottom: '2.5rem' }}></div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+            <div className="repertoire-grid">
               {fullRepertoire.map((section, idx) => (
                 <div key={idx} className="analog-list-item" style={{ padding: '1.8rem' }}>
                   <h3 style={{ fontSize: '1.35rem', color: 'var(--accent-gold)', marginBottom: '0.8rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.4rem' }}>

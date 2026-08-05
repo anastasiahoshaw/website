@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header({ activeTab, setActiveTab }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const navItems = [
     { id: 'landing', label: 'Home' },
     { id: 'bio', label: 'Biography' },
@@ -12,6 +15,7 @@ export default function Header({ activeTab, setActiveTab }) {
 
   const handleNavClick = (id) => {
     setActiveTab(id);
+    setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -23,7 +27,8 @@ export default function Header({ activeTab, setActiveTab }) {
           <div className="brand-subtitle">Organist and Educator</div>
         </div>
 
-        <nav>
+        {/* Desktop Navigation */}
+        <nav className="desktop-nav">
           <ul className="nav-links">
             {navItems.map((item) => (
               <li key={item.id}>
@@ -37,7 +42,34 @@ export default function Header({ activeTab, setActiveTab }) {
             ))}
           </ul>
         </nav>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="mobile-menu-toggle" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Navigation Menu"
+        >
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {/* Mobile Menu Dropdown Drawer */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu-drawer">
+          <ul className="mobile-nav-links">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  className={`mobile-nav-link ${activeTab === item.id ? 'active' : ''}`}
+                  onClick={() => handleNavClick(item.id)}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

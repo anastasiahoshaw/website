@@ -49,7 +49,7 @@ export default function ContactPage() {
             <div className="thin-rule"></div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '3rem', margin: '3rem 0', alignItems: 'start' }}>
+          <div className="contact-grid" style={{ margin: '3rem 0' }}>
             {/* Contact Info */}
             <div className="analog-list-item" style={{ padding: '2rem' }}>
               <h3 style={{ marginBottom: '1.2rem', color: 'var(--text-primary)' }}>Contact Details</h3>

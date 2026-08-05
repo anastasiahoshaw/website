@@ -561,13 +561,147 @@ a:hover {
   background: var(--bg-main);
 }
 
-@media (max-width: 768px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+/* Page Layout Grids */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.lessons-intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.instruction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.repertoire-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Mobile Menu Navigation Styles */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.mobile-menu-drawer {
+  display: none;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.2rem 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-link {
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.6rem 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link.active, .mobile-nav-link:hover {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .desktop-nav {
+    display: none;
   }
-  
-  .nav-links {
-    gap: 1.2rem;
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .mobile-menu-drawer {
+    display: block;
+  }
+
+  .brand-title {
+    font-size: 1.55rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body, .app-root {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container {
+    width: 94%;
+    padding: 0 0.5rem;
+  }
+
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  .hero-layout,
+  .bio-grid,
+  .lessons-intro-grid,
+  .instruction-grid,
+  .repertoire-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-single-paragraph {
+    font-size: 1.35rem;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  .editorial-header {
+    margin-bottom: 2rem;
+  }
+
+  .analog-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }

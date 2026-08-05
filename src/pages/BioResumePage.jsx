@@ -11,7 +11,7 @@ export default function BioResumePage({ setActiveTab, onOpenLightbox }) {
           </div>
 
           {/* Bio Layout */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '3.5rem', alignItems: 'start', margin: '3rem 0' }}>
+          <div className="bio-grid" style={{ margin: '3rem 0' }}>
             <div>
               <div className="analog-frame">
                 <img src="./photos/Biography pag.JPEG" alt="Anastasia Hoshaw" style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-sm)' }} />
