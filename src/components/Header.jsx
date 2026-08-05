@@ -3,9 +3,10 @@ import React from 'react';
 export default function Header({ activeTab, setActiveTab }) {
   const navItems = [
     { id: 'landing', label: 'Home' },
+    { id: 'bio', label: 'Biography' },
     { id: 'calendar', label: 'Calendar' },
     { id: 'lessons', label: 'Lessons' },
-    { id: 'bio', label: 'Bio & Resume' },
+    { id: 'recordings', label: 'Recordings & Repertoire' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -17,8 +18,9 @@ export default function Header({ activeTab, setActiveTab }) {
   return (
     <header className="header">
       <div className="container header-nav">
-        <div className="brand-title" onClick={() => handleNavClick('landing')}>
-          Anastasia Hoshaw
+        <div className="brand-container" onClick={() => handleNavClick('landing')} style={{ cursor: 'pointer' }}>
+          <div className="brand-title">Anastasia Hoshaw</div>
+          <div className="brand-subtitle">Organist and Educator</div>
         </div>
 
         <nav>

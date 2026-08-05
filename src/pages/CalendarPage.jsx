@@ -1,28 +1,44 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 
 export default function CalendarPage({ setActiveTab, onOpenFormModal }) {
-  // Simple, realistic recital events list
   const upcomingEvents = [
     {
-      date: "October 18, 2026",
-      title: "Solo Organ Recital",
-      venue: "Cathedral Sanctuary",
-      location: "Milwaukee, WI",
-      details: "Solo recital featuring works by J.S. Bach, César Franck, and Louis Vierne."
+      title: "OHS Biggs Scholars Recital",
+      dateTime: "Wednesday, August 12, 2026 at 2:00 pm & 3:00 pm CT",
+      venue: "The Church of the Holy Trinity",
+      location: "Philadelphia, PA"
     },
     {
-      date: "November 8, 2026",
-      title: "Choral Evensong & Organ Prelude",
-      venue: "Grace Church",
-      location: "Madison, WI",
-      details: "Sacred service accompaniment and prelude meditation."
+      title: "Loyola University Concert Series",
+      dateTime: "Sunday, October 18, 2026 at 3:00 pm CT",
+      venue: "Madonna della Strada Chapel",
+      location: "Chicago, IL",
+      link: "https://www.luc.edu/campusministry/mdschapel/organ/"
     },
     {
-      date: "December 4, 2026",
-      title: "Advent Organ Concert",
-      venue: "St. Mary's Sanctuary",
-      location: "Minneapolis, MN",
-      details: "Seasonal organ literature and choral accompaniment."
+      title: "Thunder From the Sky",
+      dateTime: "TBD, Fall 2026",
+      venue: "Basilica of the Sacred Heart",
+      location: "Notre Dame, IN"
+    },
+    {
+      title: "Degree Recital",
+      dateTime: "TBD, Spring 2026",
+      venue: "Basilica of the Sacred Heart",
+      location: "Notre Dame, IN"
+    },
+    {
+      title: "Monday Musical Club Community Concert Series",
+      dateTime: "Monday, April 5, 2027 at 7:00 pm ET",
+      venue: "First Congregational Church",
+      location: "St. Joseph, MI"
+    },
+    {
+      title: "Southern Illinois AGO Rising Stars Recital",
+      dateTime: "Saturday, May 29, 2027 at 7:00 pm CT",
+      venue: "Shyrock Auditorium",
+      location: "Carbondale, IL"
     }
   ];
 
@@ -31,29 +47,37 @@ export default function CalendarPage({ setActiveTab, onOpenFormModal }) {
       <section className="section-padding">
         <div className="container" style={{ maxWidth: '840px' }}>
           <div className="editorial-header">
-            <h1>Recital Calendar</h1>
-            <p style={{ marginTop: '0.5rem' }}>Upcoming organ recitals, sacred services, and guest engagements.</p>
+            <h1>Upcoming Performances</h1>
             <div className="thin-rule"></div>
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '2.5rem' }}>
             {upcomingEvents.map((event, idx) => (
-              <div key={idx} className="analog-list-item">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.6rem' }}>
+              <div key={idx} className="analog-list-item" style={{ padding: '1.8rem', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.8rem', marginBottom: '0.6rem' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.35rem', margin: 0 }}>{event.title}</h3>
-                    <div style={{ fontSize: '0.95rem', color: 'var(--accent-gold)', fontFamily: 'var(--font-heading)' }}>
+                    <h2 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--text-primary)' }}>{event.title}</h2>
+                    <div style={{ fontSize: '1rem', color: 'var(--accent-gold)', fontFamily: 'var(--font-heading)', marginTop: '0.2rem' }}>
                       {event.venue} — {event.location}
                     </div>
                   </div>
-                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', color: 'var(--text-primary)', borderBottom: '1px solid var(--border-color)' }}>
-                    {event.date}
+                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', color: 'var(--text-primary)', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.2rem' }}>
+                    {event.dateTime}
                   </div>
                 </div>
 
-                <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
-                  {event.details}
-                </p>
+                {event.link && (
+                  <div style={{ marginTop: '0.8rem' }}>
+                    <a 
+                      href={event.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      style={{ fontSize: '0.95rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                    >
+                      Venue & Event Information <ExternalLink size={14} />
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -8,6 +8,7 @@ import LandingPage from './pages/LandingPage';
 import CalendarPage from './pages/CalendarPage';
 import LessonsPage from './pages/LessonsPage';
 import BioResumePage from './pages/BioResumePage';
+import RecordingsPage from './pages/RecordingsPage';
 import ContactPage from './pages/ContactPage';
 
 export default function App() {
@@ -68,6 +69,13 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'bio' && (
+          <BioResumePage 
+            setActiveTab={setActiveTab} 
+            onOpenLightbox={handleOpenLightbox} 
+          />
+        )}
+
         {activeTab === 'calendar' && (
           <CalendarPage 
             setActiveTab={setActiveTab} 
@@ -82,11 +90,8 @@ export default function App() {
           />
         )}
 
-        {activeTab === 'bio' && (
-          <BioResumePage 
-            setActiveTab={setActiveTab} 
-            onOpenLightbox={handleOpenLightbox} 
-          />
+        {activeTab === 'recordings' && (
+          <RecordingsPage />
         )}
 
         {activeTab === 'contact' && (

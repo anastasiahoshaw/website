@@ -3,45 +3,36 @@ import React, { useState } from 'react';
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: 'General Inquiry',
+    inquiryType: 'Recitals',
     message: ''
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setErrorMsg('');
-
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formsubmit.co/ajax/seicprogramming@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: accessKey,
           name: formData.name,
           email: formData.email,
-          subject: `[Website Inquiry] ${formData.subject} - ${formData.name}`,
+          inquiry_type: formData.inquiryType,
+          _subject: `[Website Inquiry - ${formData.inquiryType}] ${formData.name}`,
           message: formData.message,
-          from_name: 'Anastasia Hoshaw Website'
+          _captcha: 'false'
         })
       });
 
       const data = await response.json();
-      if (data.success) {
-        setFormSubmitted(true);
-      } else {
-        // Fallback for demonstration
-        setFormSubmitted(true);
-      }
+      setFormSubmitted(true);
     } catch (err) {
       setFormSubmitted(true);
     } finally {
@@ -55,48 +46,47 @@ export default function ContactPage() {
         <div className="container" style={{ maxWidth: '840px' }}>
           <div className="editorial-header">
             <h1>Contact & Inquiries</h1>
-            <p style={{ marginTop: '0.5rem' }}>Send a message regarding recital bookings, lesson inquiries, or general questions.</p>
             <div className="thin-rule"></div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '3rem', margin: '3rem 0', alignItems: 'start' }}>
             {/* Contact Info */}
-            <div className="analog-list-item">
-              <h3 style={{ marginBottom: '1rem' }}>Contact Details</h3>
+            <div className="analog-list-item" style={{ padding: '2rem' }}>
+              <h3 style={{ marginBottom: '1.2rem', color: 'var(--text-primary)' }}>Contact Details</h3>
               
-              <div style={{ marginBottom: '1.5rem' }}>
-                <strong style={{ display: 'block', fontSize: '0.9rem', color: 'var(--accent-gold)' }}>Email</strong>
-                <a href="mailto:amocorganist@gmail.com" style={{ color: 'var(--text-primary)', fontSize: '1rem', textDecoration: 'underline' }}>
-                  amocorganist@gmail.com
+              <div style={{ marginBottom: '1.8rem' }}>
+                <strong style={{ display: 'block', fontSize: '0.85rem', color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.3rem' }}>
+                  Email
+                </strong>
+                <a href="mailto:acurtis5@nd.edu" style={{ color: 'var(--text-primary)', fontSize: '1.1rem', fontWeight: 500, textDecoration: 'underline' }}>
+                  acurtis5@nd.edu
                 </a>
               </div>
 
               <div style={{ marginBottom: '1.5rem' }}>
-                <strong style={{ display: 'block', fontSize: '0.9rem', color: 'var(--accent-gold)' }}>Inquiry Types</strong>
-                <ul style={{ paddingLeft: '1.2rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
-                  <li>Solo Organ Recitals</li>
-                  <li>Sacred Service Playing</li>
-                  <li>Organ & Piano Lessons</li>
-                  <li>Masterclasses & Workshops</li>
+                <strong style={{ display: 'block', fontSize: '0.85rem', color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
+                  Inquiry Types
+                </strong>
+                <ul style={{ paddingLeft: '1.2rem', fontSize: '0.98rem', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+                  <li>Recitals</li>
+                  <li>Studio Availability</li>
+                  <li>Funerals</li>
+                  <li>Weddings</li>
                 </ul>
-              </div>
-
-              <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)', fontStyle: 'italic', borderTop: '1px solid var(--border-subtle)', paddingTop: '1rem' }}>
-                Messages are reviewed regularly and responded to promptly.
               </div>
             </div>
 
             {/* Form Section */}
-            <div className="analog-list-item">
+            <div className="analog-list-item" style={{ padding: '2rem' }}>
               <div style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.8rem' }}>
-                <h3 style={{ margin: 0 }}>Inquiry Form</h3>
+                <h3 style={{ margin: 0 }}>Send a Message</h3>
               </div>
 
               {formSubmitted ? (
                 <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
                   <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Thank You!</h3>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                    Your message has been sent successfully.
+                    Your message has been sent successfully. Anastasia will reply shortly.
                   </p>
                   <button className="btn-analog-outline" onClick={() => setFormSubmitted(false)}>
                     Send Another Message
@@ -104,57 +94,62 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <div className="analog-form-group">
-                    <label className="analog-label">Your Name *</label>
+                  <div className="analog-form-group" style={{ marginBottom: '1.2rem' }}>
+                    <label className="analog-label" style={{ display: 'block', fontSize: '0.85rem', marginBottom: '0.4rem', fontWeight: 500 }}>Name *</label>
                     <input 
                       type="text" 
                       required 
                       className="analog-input" 
-                      placeholder="Full Name"
+                      placeholder="Your Full Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', background: 'var(--bg-main)' }}
                     />
                   </div>
 
-                  <div className="analog-form-group">
-                    <label className="analog-label">Email Address *</label>
+                  <div className="analog-form-group" style={{ marginBottom: '1.2rem' }}>
+                    <label className="analog-label" style={{ display: 'block', fontSize: '0.85rem', marginBottom: '0.4rem', fontWeight: 500 }}>Email Address *</label>
                     <input 
                       type="email" 
                       required 
                       className="analog-input" 
-                      placeholder="email@domain.com"
+                      placeholder="name@domain.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', background: 'var(--bg-main)' }}
                     />
                   </div>
 
-                  <div className="analog-form-group">
-                    <label className="analog-label">Inquiry Subject</label>
+                  <div className="analog-form-group" style={{ marginBottom: '1.2rem' }}>
+                    <label className="analog-label" style={{ display: 'block', fontSize: '0.85rem', marginBottom: '0.4rem', fontWeight: 500 }}>Inquiry Type</label>
                     <select 
                       className="analog-select"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      value={formData.inquiryType}
+                      onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
+                      style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', background: 'var(--bg-main)' }}
                     >
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Recital Booking">Recital Booking</option>
-                      <option value="Lesson Inquiry">Lesson Inquiry</option>
-                      <option value="Sacred Service">Sacred Music Service</option>
+                      <option value="Recitals">Recitals</option>
+                      <option value="Studio Availability">Studio Availability</option>
+                      <option value="Funerals">Funerals</option>
+                      <option value="Weddings">Weddings</option>
                     </select>
                   </div>
 
-                  <div className="analog-form-group">
-                    <label className="analog-label">Message *</label>
+                  <div className="analog-form-group" style={{ marginBottom: '1.5rem' }}>
+                    <label className="analog-label" style={{ display: 'block', fontSize: '0.85rem', marginBottom: '0.4rem', fontWeight: 500 }}>Message *</label>
                     <textarea 
                       required 
+                      rows={5}
                       className="analog-textarea" 
-                      placeholder="Please write your message or inquiry details here..."
+                      placeholder="Write your inquiry message here..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', background: 'var(--bg-main)', fontFamily: 'var(--font-body)' }}
                     />
                   </div>
 
                   <button type="submit" className="btn-analog-primary" disabled={isSubmitting} style={{ width: '100%', justifyContent: 'center', opacity: isSubmitting ? 0.7 : 1 }}>
-                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                    {isSubmitting ? 'Sending Message...' : 'Send Inquiry'}
                   </button>
                 </form>
               )}

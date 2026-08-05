@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle2, ExternalLink, MessageSquare, Calendar, GraduationCap } from 'lucide-react';
+import { X, Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
 export default function GoogleFormModal({ isOpen, onClose, defaultType = 'general' }) {
   const [formType, setFormType] = useState(defaultType); // 'general', 'recital', 'lesson'
@@ -22,35 +22,28 @@ export default function GoogleFormModal({ isOpen, onClose, defaultType = 'genera
     e.preventDefault();
     setIsSubmitting(true);
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formsubmit.co/ajax/seicprogramming@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: accessKey,
           name: formData.name,
           email: formData.email,
           phone: formData.phone || 'N/A',
           event_date: formData.eventDate || 'N/A',
           venue: formData.venue || 'N/A',
           lesson_interest: formData.lessonType || 'N/A',
-          subject: `[Website Inquiry - ${formType.toUpperCase()}] ${formData.name}`,
+          _subject: `[Website Inquiry - ${formType.toUpperCase()}] ${formData.name}`,
           message: formData.message,
-          from_name: 'Anastasia Hoshaw Website'
+          _captcha: 'false'
         })
       });
 
       const data = await response.json();
-      if (data.success) {
-        setSubmitted(true);
-      } else {
-        setSubmitted(true);
-      }
+      setSubmitted(true);
     } catch (err) {
       setSubmitted(true);
     } finally {
@@ -215,7 +208,7 @@ export default function GoogleFormModal({ isOpen, onClose, defaultType = 'genera
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem' }}>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                Delivered via encrypted HTTPS API
+                Direct email transmission
               </span>
               <button type="submit" className="cta-btn-gold" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.7 : 1 }}>
                 <Send size={16} /> {isSubmitting ? 'Sending...' : 'Send Inquiry'}

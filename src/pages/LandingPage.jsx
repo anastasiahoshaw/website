@@ -3,34 +3,40 @@ import React from 'react';
 export default function LandingPage({ setActiveTab, onOpenLightbox }) {
   const photoGallery = [
     {
-      src: "./photos/DSC_7483.jpeg",
-      caption: "Anastasia Hoshaw at the Organ Pipe Chamber",
-      location: "Sanctuary Organ"
+      src: "./photos/Outside the Basilica of the Sacred Heart.jpeg",
+      caption: "Outside the Basilica of the Sacred Heart"
     },
     {
-      src: "./photos/DSC_7503.jpeg",
-      caption: "Organ Console Performance",
-      location: "Concert Recital"
+      src: "./photos/Senior Recital, Champaign, IL.jpg",
+      caption: "Senior Recital, Champaign, IL"
     },
     {
-      src: "./photos/DSC_7521.jpeg",
-      caption: "Anastasia Hoshaw at the Manuals",
-      location: "Organ Studio"
+      src: "./photos/Planting pipes in Milwaukee, WI.jpg",
+      caption: "Planting pipes in Milwaukee, WI"
     },
     {
-      src: "./photos/DSC_7528.jpeg",
-      caption: "Recital Rehearsal",
-      location: "Organ Console"
+      src: "./photos/School of Music Commencement at the University of Illinois.jpeg",
+      caption: "School of Music Commencement at the University of Illinois"
     },
     {
-      src: "./photos/DSC_7554.jpeg",
-      caption: "Pedalboard Registration",
-      location: "Organ Console"
+      src: "./photos/With the organ at University Lutheran, Champaign.jpg",
+      caption: "With the organ at University Lutheran, Champaign"
     },
     {
-      src: "./photos/IMG_2779.jpeg",
-      caption: "Cathedral Organ Façade & Console",
-      location: "Cathedral Sanctuary"
+      src: "./photos/Working with the choir at University Lutheran, Champaign.jpg",
+      caption: "Working with the choir at University Lutheran, Champaign"
+    },
+    {
+      src: "./photos/With the Southern Illinois chapter of the AGO and recitalist Chelsea Chen.jpg",
+      caption: "With the Southern Illinois chapter of the AGO and recitalist Chelsea Chen"
+    },
+    {
+      src: "./photos/Bologna, Italy.jpeg",
+      caption: "Bologna, Italy"
+    },
+    {
+      src: "./photos/Rome, Italy.jpg",
+      caption: "Rome, Italy"
     }
   ];
 
@@ -41,36 +47,20 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
         <div className="container hero-layout">
           <div>
             <p className="hero-single-paragraph">
-              The official website of Anastasia Hoshaw! As a concert organist and sacred musician, Anastasia presents solo recitals, directs liturgical music, and offers private organ and piano instruction. Here you can find upcoming recital dates, explore private studio lessons, view her selected repertoire, and submit booking inquiries.
+              Organist Anastasia Hoshaw is a graduate student presenting recitals, offering private beginner organ lessons, and working as a sacred musician in the Michiana area.
             </p>
+            <div style={{ marginTop: '2rem' }}>
+              <button className="btn-analog-primary" onClick={() => { setActiveTab('bio'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                Full Biography <span className="btn-arrow">&rarr;</span>
+              </button>
+            </div>
           </div>
 
           <div>
             <div className="hero-analog-frame" onClick={() => { setActiveTab('bio'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-              <img src="./photos/DSC_7483.jpeg" alt="Anastasia Hoshaw Organist" />
-              <div className="analog-caption">Anastasia Hoshaw</div>
+              <img src="./photos/TITLE PAGE PHOTO.jpeg" alt="Anastasia Hoshaw" />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Brief Overview Section */}
-      <section className="section-padding" style={{ background: 'var(--bg-surface)' }}>
-        <div className="container" style={{ maxWidth: '820px', textAlign: 'center' }}>
-          <h2 style={{ margin: '0.6rem 0 1.2rem 0' }}>Organ & Sacred Music Performance</h2>
-          <div className="thin-rule" style={{ marginBottom: '2.4rem' }}></div>
-
-          <p style={{ marginBottom: '1.6rem', fontSize: '1.08rem', textAlign: 'left', lineHeight: '1.85' }}>
-            Anastasia Hoshaw is active as a recitalist, sacred musician, and keyboard educator. Her programming explores classical organ literature spanning Baroque counterpoint, French Romantic symphonic works, and modern masterworks, alongside sacred service leadership and choral accompaniment.
-          </p>
-
-          <p style={{ marginBottom: '2.5rem', fontSize: '1.08rem', textAlign: 'left', lineHeight: '1.85' }}>
-            Whether presenting solo recitals, leading sacred services, or teaching students at the console, her artistic vision combines technical precision, expressive depth, and liturgical tradition.
-          </p>
-
-          <button className="btn-analog-outline" onClick={() => setActiveTab('bio')}>
-            Biography & Full Repertoire <span className="btn-arrow">&rarr;</span>
-          </button>
         </div>
       </section>
 
@@ -78,7 +68,7 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
       <section className="section-padding">
         <div className="container">
           <div className="editorial-header">
-            <h2>Console & Performance Gallery</h2>
+            <h2>Gallery</h2>
             <div className="thin-rule"></div>
           </div>
 
@@ -96,19 +86,19 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
         </div>
       </section>
 
-      {/* Simple CTA */}
+      {/* Lesson Studio CTA */}
       <section className="section-padding" style={{ background: 'var(--bg-surface-elevated)', borderTop: '1px solid var(--border-color)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '660px' }}>
-          <h2 style={{ marginBottom: '0.9rem' }}>Recitals & Lesson Studio</h2>
-          <p style={{ marginBottom: '2rem', fontSize: '1.08rem' }}>
-            Available for solo organ recitals, sacred service playing, and private organ & piano instruction.
+          <h2 style={{ marginBottom: '0.9rem' }}>Lesson Studio</h2>
+          <p style={{ marginBottom: '2rem', fontSize: '1.1rem', lineHeight: '1.8' }}>
+            Anastasia is passionate about forming the next generation of musicians.
           </p>
           <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button className="btn-analog-primary" onClick={() => setActiveTab('contact')}>
+            <button className="btn-analog-primary" onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
               Send Inquiry <span className="btn-arrow">&rarr;</span>
             </button>
-            <button className="btn-analog-outline" onClick={() => setActiveTab('lessons')}>
-              Lesson Details
+            <button className="btn-analog-outline" onClick={() => { setActiveTab('lessons'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              Teaching Philosophy
             </button>
           </div>
         </div>
