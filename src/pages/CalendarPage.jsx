@@ -95,8 +95,8 @@ export default function CalendarPage({ setActiveTab, onOpenFormModal }) {
             <p style={{ marginBottom: '1.5rem', fontSize: '0.98rem' }}>
               Interested in scheduling a solo organ recital, dedicatory concert, or guest appearance?
             </p>
-            <button className="btn-analog-primary" onClick={() => onOpenFormModal('recital')}>
-              Inquire for Booking
+            <button className="btn-analog-primary" onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              Inquire for Booking <span className="btn-arrow">&rarr;</span>
             </button>
           </div>
         </div>

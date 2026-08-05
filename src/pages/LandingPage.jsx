@@ -74,7 +74,7 @@ export default function LandingPage({ setActiveTab, onOpenLightbox }) {
 
           <div className="analog-gallery">
             {photoGallery.map((item, idx) => (
-              <div key={idx} className="analog-gallery-card" onClick={() => onOpenLightbox(photoGallery, idx)}>
+              <div key={idx} className="analog-gallery-card">
                 <img src={item.src} alt={item.caption} />
                 <div style={{ padding: '0.75rem 0.3rem 0.3rem 0.3rem', textAlign: 'center' }}>
                   <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', color: 'var(--text-primary)', fontWeight: 500 }}>{item.caption}</div>
