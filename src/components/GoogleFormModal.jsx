@@ -22,26 +22,23 @@ export default function GoogleFormModal({ isOpen, onClose, defaultType = 'genera
     e.preventDefault();
     setIsSubmitting(true);
 
-    const accessKey = "e56fdafd3ee3dd8e2d1a05a2751820b8";
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formsubmit.co/ajax/e56fdafd3ee3dd8e2d1a05a2751820b8', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: accessKey,
           name: formData.name,
           email: formData.email,
           phone: formData.phone || 'N/A',
           event_date: formData.eventDate || 'N/A',
           venue: formData.venue || 'N/A',
           lesson_interest: formData.lessonType || 'N/A',
-          subject: `[Website Inquiry - ${formType.toUpperCase()}] ${formData.name}`,
+          _subject: `[Website Inquiry - ${formType.toUpperCase()}] ${formData.name}`,
           message: formData.message,
-          from_name: 'Anastasia Hoshaw Website'
+          _captcha: 'false'
         })
       });
 
