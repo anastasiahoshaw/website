@@ -14,20 +14,22 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const accessKey = "e56fdafd3ee3dd8e2d1a05a2751820b8";
+
     try {
-      const response = await fetch('https://formsubmit.co/ajax/amocorganist@gmail.com', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
+          access_key: accessKey,
           name: formData.name,
           email: formData.email,
-          inquiry_type: formData.inquiryType,
-          _subject: `[Website Inquiry - ${formData.inquiryType}] ${formData.name}`,
-          message: formData.message,
-          _captcha: 'false'
+          subject: `[Website Inquiry - ${formData.inquiryType}] ${formData.name}`,
+          message: `Inquiry Type: ${formData.inquiryType}\nFrom: ${formData.name} (${formData.email})\n\nMessage:\n${formData.message}`,
+          from_name: 'Anastasia Hoshaw Website'
         })
       });
 
